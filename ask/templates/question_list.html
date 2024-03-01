@@ -1,0 +1,11 @@
+<h1>Question_list</h1>
+
+<ul>
+    
+    {% for ask in questions  %}
+        <li>
+            <a href="/questions/{{ask.id}}">{{ask}}</a>
+        </li>
+    {% endfor %}
+        
+</ul>
