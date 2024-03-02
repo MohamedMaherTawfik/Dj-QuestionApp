@@ -18,12 +18,15 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
-from ask .views import Question,Question_detail
+from ask .views import Question_list,Question_detail,AddQuestion,Question_create,edit_questions,delete_question,question_edit
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
-    path('questions/',Question),
+    path('questions/',Question_list),
     path('questions/<int:question_id>',Question_detail),
+    path('questions/new',AddQuestion.as_view()),
+    path('questions/<int:question_id>/edit',question_edit),
+    path('questions/<int:pk>/delete',delete_question.as_view()),
     
 ]
 
