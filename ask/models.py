@@ -14,13 +14,13 @@ class Questions(models.Model):
     def __str__(self):
         return str(self.title)
     
-# class Answer(models.Model):
-#     author=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True,related_name='User_Answer')
-#     answer=models.TextField(max_length=500)
-#     question=models.OneToOneField(Questions,on_delete=models.SET_NULL,null=True,blank=True)
-#     created_at=models.DateTimeField(default=timezone.now)
+class Answer(models.Model):
+    author=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True,related_name='User_Answer')
+    answer=models.TextField(max_length=500)
+    question=models.OneToOneField(Questions,on_delete=models.SET_NULL,null=True,blank=True)
+    created_at=models.DateTimeField(default=timezone.now)
     
-#     def __str__(self):
-#         return str(self.author)
+    def __str__(self):
+        return str(self.author)
     
     

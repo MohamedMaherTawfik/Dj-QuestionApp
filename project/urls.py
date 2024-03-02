@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path('questions/',Question_list),
-    path('questions/<int:question_id>',Question_detail),
+    path('questions/<int:pk>',Question_detail),
     path('questions/new',AddQuestion.as_view()),
     path('questions/<int:question_id>/edit',question_edit),
     path('questions/<int:pk>/delete',delete_question.as_view()),

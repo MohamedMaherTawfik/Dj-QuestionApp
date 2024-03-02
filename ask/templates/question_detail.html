@@ -7,3 +7,24 @@
 <p>{{question.question}}</p>
 <p>{{question.created_at}}</p>
 
+<hr>
+<h3>Answer Question</h3>
+
+<ul>
+{% for answer in answer_question %}
+    <li>
+        <h5>
+            {{answer.author}} -{{answer.answer}} - {{answer.created_at}}
+        </h5>
+    </li>
+{% endfor %}
+
+</ul>
+<hr>
+
+<form enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Add_Answer">
+</form>
+
