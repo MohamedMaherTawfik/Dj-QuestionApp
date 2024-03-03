@@ -1,7 +1,5 @@
 <h4>{{question}}</h4>
 <hr>
-
-
 <p>{{question.title}}</p>
 <p>{{question.author}}</p>
 <p>{{question.question}}</p>
@@ -9,16 +7,14 @@
 
 <hr>
 <h3>Answer Question</h3>
-
 <ul>
-{% for answer in answer_question %}
+{% for answer in question.answer_question.all %}
     <li>
         <h5>
-            {{answer.author}} -{{answer.answer}} - {{answer.created_at}}
+            {{answer.author}} -{{answer.answer}}-{{answer.created_at}}
         </h5>
     </li>
 {% endfor %}
-
 </ul>
 <hr>
 
